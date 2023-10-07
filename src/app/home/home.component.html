@@ -1,0 +1,101 @@
+<div class="w-full">
+
+    <div class="bg-cover bg-center" style="background-image: url('../../assets/img/banners/banner.png');">
+        <div class="grid grid-cols-2 gap-6">
+            <div class="hidden sm:block"></div>
+            <div class="col-span-2 md:col-span-1">
+                <form [formGroup]="form" #administrador="ngForm"
+                class="grid grid-cols-1 content-center p-20 my-20">
+
+                    <mat-form-field class="col-span-1">
+                        <mat-label>Fecha</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="fecha">
+                        <mat-hint>DD/DMM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="form.get('fecha')?.hasError('required')">
+                            Selecciona una fecha
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- Nombre -->
+                    <mat-form-field class="col-span-1">
+                        <mat-label>Teléfono</mat-label>
+                        <input mask="(000) 000-0000" matInput placeholder="Télefono" formControlName="telefono">
+                        <mat-error *ngIf="form.get('telefono')?.hasError('required')">
+                            El teléfono es requerido
+                        </mat-error>
+                    </mat-form-field>
+                    
+                    <!-- Correo electrónico -->
+                    <mat-form-field class="col-span-1">
+                        <mat-label>Correo electrónico</mat-label>
+                        <input matInput placeholder="Correo electrónico" formControlName="correo">
+                        <mat-error *ngIf="form.get('correo')?.hasError('required')">
+                            El correo electónico es requerido
+                        </mat-error>
+                        <mat-error *ngIf="form.get('correo')?.hasError('email')">
+                            El correo electónico no es valido
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="col-span-1 flex justify-end">
+                        <button class="" mat-flat-button [color]="'primary'" 
+                        [disabled]="form.disabled" (click)="enviar()" [disabled]="form.invalid">
+                            Enviar datos
+                        </button>                  
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center m-6 mt-20">
+        <div class="w-full sm:w-full md:w-10/12 lg:w-9/12 xl:w-8/12 xxl:w-7/12 xxxl:w-6/12">
+            <div>
+                <mat-button-toggle-group [value]="valor">
+                    <mat-button-toggle value="activo" class="uppercase">Estoy activa</mat-button-toggle>
+                    <mat-button-toggle value="no-activo" class="uppercase">No estoy activa</mat-button-toggle>
+                    <mat-button-toggle disabled value="deshabilitada" class="uppercase">Estoy deshabilitada</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="grid grid-cols-12 gap-3 rounded-md bg-white p-10 mb-6">
+                <!-- encabezado -->
+                <div class=" col-span-12 font-semibold text-2xl mb-6 text-primary">
+                    <div class="text-center">Soy la tabla de la pestaña 1 activa</div>
+                </div>
+                <!-- Permiso CRE -->
+                <!-- Servicios totales -->
+                <div class="bg-white rounded-lg col-span-12">
+            
+                    <div class="hidden md:block">
+                        <div class="grid grid-cols-12 gap-3 px-2">
+                            <div class="col-span-2 py-3 font-medium">#</div>
+                            <div class="col-span-4 py-3 font-medium">First</div>
+                            <div class="col-span-4 py-3 font-medium">Last</div>
+                            <div class="col-span-2 py-3 font-medium">Handle</div>
+                        </div>
+                    </div>
+            
+                    <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]; let last = last; let i = index">
+                        <div class="grid grid-cols-12 gap-3 py-3 hover:bg-gray-100 hover:rounded-lg px-2"
+                        [ngClass]="i % 2 === 0 ? 'bg-white': 'color rounded-lg'">
+                            <div class="col-span-2 font-light">
+                                #43
+                            </div>
+                            <div class="col-span-4 font-light">
+                                xxx
+                            </div>
+                            <div class="col-span-4 font-light">
+                                132
+                            </div>
+                            <div class="col-span-2 font-light">
+                                @ab
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

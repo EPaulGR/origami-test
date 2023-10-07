@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Estás seguro de que deseas enviar esta información?</h1>
+<div mat-dialog-content>
+
+    <div class="p-6">
+        <p>Fecha: {{moment(data.fecha).locale('es').format('L')}}</p>
+        <p>Teléfono: {{data?.telefono | telefono}}</p>
+        <p>Correo: {{data?.correo}}</p>
+    </div>
+
+
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-flat-button [color]="'primary'" mat-dialog-close>No</button>
+    <button mat-flat-button [color]="'primary'" mat-dialog-close cdkFocusInitial>Aceptar</button>
+</div>
