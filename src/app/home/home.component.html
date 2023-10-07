@@ -7,6 +7,7 @@
                 <form [formGroup]="form" #administrador="ngForm"
                 class="grid grid-cols-1 content-center p-20 my-20">
 
+                    <!-- Fecha -->
                     <mat-form-field class="col-span-1">
                         <mat-label>Fecha</mat-label>
                         <input matInput [matDatepicker]="picker" formControlName="fecha">
@@ -59,12 +60,11 @@
                 </mat-button-toggle-group>
             </div>
             <div class="grid grid-cols-12 gap-3 rounded-md bg-white p-10 mb-6">
-                <!-- encabezado -->
+
                 <div class=" col-span-12 font-semibold text-2xl mb-6 text-primary">
                     <div class="text-center">Soy la tabla de la pestaña 1 activa</div>
                 </div>
-                <!-- Permiso CRE -->
-                <!-- Servicios totales -->
+
                 <div class="bg-white rounded-lg col-span-12">
             
                     <div class="hidden md:block">
