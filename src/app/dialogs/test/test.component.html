@@ -2,9 +2,31 @@
 <div mat-dialog-content>
 
     <div class="p-6">
+        <h1>Info del Input</h1>
         <p>Fecha: {{moment(data.fecha).locale('es').format('L')}}</p>
         <p>Teléfono: {{data?.telefono | telefono}}</p>
         <p>Correo: {{data?.correo}}</p>
+    </div>
+
+    <div class="p-6" *ngFor="let item of res">
+        <h1>Respuesta de la petición</h1>
+        <p>City: {{item.City}}</p>
+        <p>CityCode: {{item.CityCode}}</p>
+        <p>LoadAddressIdentifier: {{item.LoadAddressIdentifier}}</p>
+        <p>LoadSourceIdentifier: {{item.LoadSourceIdentifier}}</p>
+        <p>Municipality: {{item.Municipality}}</p>
+        <p>MunicipalityCode: {{item.MunicipalityCode}}</p>
+        <p>OfficeZipC: {{item.OfficeZipC}}</p>
+        <p>State: {{item.State}}</p>
+        <p>StateCode: {{item.StateCode}}</p>
+        <p>Township: {{item.Township}}</p>
+        <p>TownshipIdentifier: {{item.TownshipIdentifier}}</p>
+        <p>TownshipType: {{item.TownshipType}}</p>
+        <p>TownshipTypeCode: {{item.TownshipTypeCode}}</p>
+        <p>TownshipZipD: {{item.TownshipZipD}}</p>
+        <p>Zip: {{item.Zip}}</p>
+        <p>ZipC: {{item.ZipC}}</p>
+        <p>ZoneType: {{item.ZoneType}}</p>
     </div>
 
 

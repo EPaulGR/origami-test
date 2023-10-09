@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatRippleModule} from '@angular/material/core';
 
 
 @Component({
@@ -20,7 +21,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
   providers: [provideNgxMask()],
   imports: [CommonModule, MatDialogModule, MatButtonModule, MatFormFieldModule, ReactiveFormsModule,
             MatDatepickerModule, MatNativeDateModule, FormsModule, MatInputModule, NgxMaskDirective,
-            MatButtonToggleModule,],
+            MatButtonToggleModule, MatRippleModule],
 })
 
 export class HomeComponent implements OnInit {
